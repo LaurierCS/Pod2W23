@@ -7,6 +7,8 @@
 
 .topbarBrand {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 35px;
 }
 
@@ -85,5 +87,23 @@
 }
 
 @media (max-width: 1000px) {
+    .topbar {
+        flex-direction: column;
+        height: fit-content;
+        margin-top: 25px;
+        gap: 25px;
+    }
+
+    .topbarBrand h1 {
+        font-size: calc(2vw + 2vh);
+    }
+
+    .topbarLinks, .loginButton, .rgstrButton {
+        font-size: calc(1.5vw + 1vh);
+    }
+
+    .topbarLinks {
+        gap: 25px;
+    }
 
 }
