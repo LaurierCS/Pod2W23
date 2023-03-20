@@ -1,3 +1,18 @@
+.sectionOne {
+    background: var(--neutral-black);
+    height: 100vh;
+}
+
+.topbar, 
+.topbarBrand, 
+.topbarBrand h1, 
+.topbarLogo, 
+.topbarBrand, 
+.topbarLinks, 
+.topbarLinks li, 
+.topbarLinks li a {
+    background: var(--neutral-black);
+}
 .topbar {
     display: flex;
     justify-content: space-around;
@@ -55,6 +70,7 @@
 }
 
 .userReg {
+    background: var(--neutral-black);
     display: flex;
     gap: 30px;
 }
