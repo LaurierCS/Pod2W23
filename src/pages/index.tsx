@@ -4,9 +4,15 @@ export default function Home() {
   return (
     <>
       <div className={landingPageStyles.topbar}>
-        <div className={landingPageStyles.topbarLogo}>
-          <h1><a href="#">ExTracker</a></h1>
-        </div>
+        <a href="#">
+          <div className={landingPageStyles.topbarBrand}>
+            <div className={landingPageStyles.topbarLogo}>
+              <span className={landingPageStyles.circle}></span>
+              <span className={landingPageStyles.circle}></span>
+            </div>
+            <h1>ExTracker</h1>
+          </div>
+        </a>
         <ul className={landingPageStyles.topbarLinks}>
           <li><a href="#overview">Overview</a></li>
           <li><a href="#features">Features</a></li>

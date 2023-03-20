@@ -5,7 +5,36 @@
     height: 5rem;
 }
 
-.topbarLogo h1 {
+.topbarBrand {
+    display: flex;
+    gap: 35px;
+}
+
+.topbarLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--neutral-white);
+    margin-right: -15px;    
+    border: 2px solid;
+}
+
+.circle:first-child {
+    background: linear-gradient(90deg, #22A4C0, #5526DB);
+}
+
+.circle:last-child {
+    background: linear-gradient(180deg, #22A4C0, #5526DB);
+}
+
+.topbarBrand h1 {
     font-size: 32px; 
 }
 
@@ -19,7 +48,7 @@
     font-size: 18px;
 }
 
-.topbarLinks li a, .topbarLogo h1 a {
+.topbarLinks li a, .topbar a {
     text-decoration: none;
     cursor: pointer;
 }
