@@ -25,7 +25,6 @@
     border-radius: 50%;
     background: var(--neutral-white);
     margin-right: -15px;    
-    border: 2px solid;
 }
 
 .circle:first-child {
@@ -74,7 +73,7 @@
     font-size: 18px;
     background: none;
     outline: 0;
-    padding: 10px 15px 10px;
+    padding: 8px 15px 8px;
     border: 2px solid var(--neutral-white);
     border-radius: 10px;
     cursor: pointer;
@@ -98,12 +97,13 @@
         font-size: calc(2vw + 2vh);
     }
 
-    .topbarLinks, .loginButton, .rgstrButton {
-        font-size: calc(1.5vw + 1vh);
+    .topbarLinks {
+        font-size: calc(1.25vw + 1vh);
+        gap: 25px;
     }
 
-    .topbarLinks {
-        gap: 25px;
+    .loginButton, .rgstrButton {
+        font-size: calc(1vw + 1vh);
     }
 
 }

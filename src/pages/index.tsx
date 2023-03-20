@@ -1,6 +1,6 @@
 import landingPageStyles from '../styles/landingpage.module.css';
 
-export default function Home() {
+export default function LandingPage() {
   return (
     <>
       <div className={landingPageStyles.topbar}>
