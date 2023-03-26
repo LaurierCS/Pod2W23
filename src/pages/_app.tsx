@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/pages/expenses/index.module.css";
 import type { AppProps } from "next/app";
 import { MantineProvider } from "@mantine/core";
 
