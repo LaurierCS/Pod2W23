@@ -3,16 +3,6 @@
     height: 100vh;
 }
 
-.topbar, 
-.topbarBrand, 
-.topbarBrand h1, 
-.topbarLogo, 
-.topbarBrand, 
-.topbarLinks, 
-.topbarLinks li, 
-.topbarLinks li a {
-    background: var(--neutral-black);
-}
 .topbar {
     display: flex;
     justify-content: space-around;
@@ -96,6 +86,29 @@
     transition: 0.2s ease-in-out;
 }
 
+.heroText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    margin-top: 10rem;
+    gap: 15px;
+    text-align: center;
+}
+
+.heroText h1 {
+    color: var(--neutral-white);
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+.heroText h6 {
+    color: #c2c2c2;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
 .rgstrButton:hover {
     color: var(--neutral-black);
     background: var(--neutral-white);
@@ -105,7 +118,7 @@
     .topbar {
         flex-direction: column;
         height: fit-content;
-        margin-top: 25px;
+        padding-top: 25px;
         gap: 25px;
     }
 
@@ -122,4 +135,15 @@
         font-size: calc(1vw + 1vh);
     }
 
+    .heroText {
+        margin-top: 5rem;
+    }
+
+    .heroText h1 {
+        font-size: calc(5vw + 1vh);
+    }
+
+    .heroText h6 {
+        font-size: calc(1vw + 1vh);
+    }
 }

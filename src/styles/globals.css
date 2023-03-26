@@ -9,7 +9,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: var(--neutral-white);
     color: var(--neutral-white);
     font-family: 'Poppins', 'sans-serif';
 }
