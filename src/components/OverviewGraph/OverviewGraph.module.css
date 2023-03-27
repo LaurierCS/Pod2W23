@@ -1,0 +1,18 @@
+.container {
+  border-radius: 25px;
+  background-color: #141517;
+  height: 700px;
+  padding: 20px;
+}
+
+.nav {
+  height: 10%;
+  color: #F8F9FA;
+  justify-content: space-between;
+}
+
+.graph {
+  height: 90%;
+  border-radius: 15px;
+  background-color: #25262B;
+}
