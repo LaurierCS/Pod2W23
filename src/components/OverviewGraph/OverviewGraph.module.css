@@ -6,13 +6,28 @@
 }
 
 .nav {
-  height: 10%;
+  height: 9%;
   color: #F8F9FA;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.overview {
+  height: 91%;
+  border-radius: 15px;
+  background-color: #25262B;
+  display: flex;
+  align-items: stretch;
 }
 
 .graph {
-  height: 90%;
-  border-radius: 15px;
-  background-color: #25262B;
+  width: 75%;
+  height: 100%;
+}
+
+.stack {
+  width: 25%;
+  height: 100%;
 }
