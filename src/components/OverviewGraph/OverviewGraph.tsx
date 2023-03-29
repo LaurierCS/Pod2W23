@@ -43,7 +43,7 @@ const OverviewGraph = () => {
   return(
     <Container className={styles.container}>
       <Container className={styles.nav}>
-        <Title>Overview</Title>
+        <Title order={3}>Overview</Title>
         <Tabs styles={{ tab: {
             color: '#F8F9FA',
             '&[data-active]': { backgroundColor: '#2C2E33'},
@@ -62,11 +62,19 @@ const OverviewGraph = () => {
         <Container className={styles.graph}>
           <PieGraph data={data}></PieGraph>
         </Container>
-        <Stack className={styles.stack}>
-          <Button variant="outline">1</Button>
-          <Button variant="outline">2</Button>
-          <Button variant="outline">3</Button>
-        </Stack>
+        <Container className={styles.sideinfo}>
+          <Stack className={styles.stack}>
+            <Container className={styles.change}>
+              <Title order={4}>Net Change</Title>
+            </Container>
+            <Container className={styles.income}>
+              <Title order={4}>Income</Title>
+            </Container>
+            <Container className={styles.expenses}>
+              <Title order={4}>Expenses</Title>
+            </Container>
+          </Stack>
+        </Container>
       </Container>
     </Container>
   );

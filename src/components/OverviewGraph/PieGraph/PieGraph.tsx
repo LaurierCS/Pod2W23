@@ -27,31 +27,6 @@ const PieGraph = ({ data }: PieGraphProps) => (
       arcLabelsSkipAngle={12}
       arcLabelsTextColor="#ffffff"
       motionConfig="wobbly"
-      legends={[
-          {
-              anchor: 'bottom',
-              direction: 'row',
-              justify: false,
-              translateX: 0,
-              translateY: 65,
-              itemsSpacing: 0,
-              itemWidth: 80,
-              itemHeight: 40,
-              itemTextColor: '#DEE2E6',
-              itemDirection: 'left-to-right',
-              itemOpacity: 1,
-              symbolSize: 20,
-              symbolShape: 'circle',
-              effects: [
-                  {
-                      on: 'hover',
-                      style: {
-                          itemTextColor: '#FFF'
-                      }
-                  }
-              ]
-          }
-      ]}
   />
 );
 
