@@ -1,8 +1,9 @@
 .sectionOne {
     background: var(--neutral-black);
-    height: 100vh;
+    height: 105vh;
     box-shadow: 5px 5px 40px 45px rgba(0, 0, 0, 0.4);
     position: relative;
+    z-index: 1;
 }
 
 .topbar {
@@ -59,6 +60,7 @@
 .topbarLinks li a, .topbar a {
     text-decoration: none;
     cursor: pointer;
+    color: var(--neutral-white);
 }
 
 .userReg {
@@ -74,6 +76,7 @@
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     cursor: pointer;
+    color: var(--neutral-white);
 }
 
 .rgstrButton {
@@ -85,6 +88,7 @@
     border: 2px solid var(--neutral-white);
     border-radius: 10px;
     cursor: pointer;
+    color: var(--neutral-white);
     transition: 0.2s ease-in-out;
 }
 
@@ -101,13 +105,13 @@
 
 .heroContent h1 {
     color: var(--neutral-white);
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: 600;
 }
 
 .heroContent h6 {
     color: #c2c2c2;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 400;
 }
 
@@ -120,12 +124,13 @@
     font-size: calc(1vw + 1vh);
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    color: var(--neutral-white);
     margin-top: 25px;
     background-image: linear-gradient(to left, #03D2FF, #6920E1);
     background-size: 200%;
     outline: 0;
     border: 0;
-    border-radius: 15px;
+    border-radius: 25px;
     padding: 20px 35px 20px;
     cursor: pointer;
     transition: 0.4s ease-in;
@@ -135,11 +140,29 @@
     background-position: top;
 }
 
+.ImageContainer {
+    width: 100%;
+    height: 100%;
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+.Image {
+    width: 75%;
+    height: 75%;
+    background: black;
+    border-radius: 45px;
+    border: 6px solid #181717;
+    z-index: 1;
+}
+
 .sectionTwo {
-    background: none;
-    height: 100vh;
+    background: var(--neutral-white);
+    height: 125vh;
     position: relative;
-    margin-top: 50px;
+    z-index: 0;
 }
 
 @media (max-width: 1000px) {

@@ -29,6 +29,12 @@ export default function LandingPage() {
           <h6>Keep track of your spending across all bank accounts with ExTracker</h6>
           <button className={landingPageStyles.getStartedButton}>Get Started</button>
         </div>
+
+        <div className={landingPageStyles.ImageContainer}>
+          <div className={landingPageStyles.Image}>
+      
+          </div>
+        </div>
       </div>
 
       <div className={landingPageStyles.sectionTwo}>

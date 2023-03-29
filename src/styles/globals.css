@@ -2,13 +2,13 @@
 
 :root {
     --neutral-black: #07080B;
-    --neutral-white: #dddddd;
+    --neutral-white: #d1d1d1;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--neutral-white);
     font-family: 'Poppins', 'sans-serif';
 }
+
