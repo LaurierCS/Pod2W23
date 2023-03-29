@@ -1,6 +1,8 @@
 .sectionOne {
     background: var(--neutral-black);
     height: 100vh;
+    box-shadow: 5px 5px 40px 45px rgba(0, 0, 0, 0.4);
+    position: relative;
 }
 
 .topbar {
@@ -86,7 +88,7 @@
     transition: 0.2s ease-in-out;
 }
 
-.heroText {
+.heroContent {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,13 +99,13 @@
     text-align: center;
 }
 
-.heroText h1 {
+.heroContent h1 {
     color: var(--neutral-white);
     font-size: 4rem;
     font-weight: 600;
 }
 
-.heroText h6 {
+.heroContent h6 {
     color: #c2c2c2;
     font-size: 1.5rem;
     font-weight: 400;
@@ -112,6 +114,32 @@
 .rgstrButton:hover {
     color: var(--neutral-black);
     background: var(--neutral-white);
+}
+
+.getStartedButton {
+    font-size: calc(1vw + 1vh);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    margin-top: 25px;
+    background-image: linear-gradient(to left, #03D2FF, #6920E1);
+    background-size: 200%;
+    outline: 0;
+    border: 0;
+    border-radius: 15px;
+    padding: 20px 35px 20px;
+    cursor: pointer;
+    transition: 0.4s ease-in;
+}
+
+.getStartedButton:hover {
+    background-position: top;
+}
+
+.sectionTwo {
+    background: none;
+    height: 100vh;
+    position: relative;
+    margin-top: 50px;
 }
 
 @media (max-width: 1000px) {
@@ -135,15 +163,15 @@
         font-size: calc(1vw + 1vh);
     }
 
-    .heroText {
+    .heroContent {
         margin-top: 5rem;
     }
 
-    .heroText h1 {
+    .heroContent h1 {
         font-size: calc(5vw + 1vh);
     }
 
-    .heroText h6 {
+    .heroContent h6 {
         font-size: calc(1vw + 1vh);
     }
 }

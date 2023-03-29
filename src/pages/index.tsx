@@ -24,11 +24,14 @@ export default function LandingPage() {
             <button className={landingPageStyles.rgstrButton}>Sign Up</button>
           </div>
         </div>
-
-        <div className={landingPageStyles.heroText}>
+        <div className={landingPageStyles.heroContent}>
           <h1>An easy way to manage your expenses</h1>
           <h6>Keep track of your spending across all bank accounts with ExTracker</h6>
+          <button className={landingPageStyles.getStartedButton}>Get Started</button>
         </div>
+      </div>
+
+      <div className={landingPageStyles.sectionTwo}>
       </div>
     </>
   );
