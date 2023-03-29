@@ -1,10 +1,11 @@
-.sectionOne {
+.mainSection {
     background: var(--neutral-black);
     height: 105vh;
     box-shadow: 5px 5px 40px 45px rgba(0, 0, 0, 0.4);
     position: relative;
     z-index: 1;
 }
+
 
 .topbar {
     display: flex;
@@ -92,7 +93,7 @@
     transition: 0.2s ease-in-out;
 }
 
-.heroContent {
+.mainHero {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -103,13 +104,13 @@
     text-align: center;
 }
 
-.heroContent h1 {
+.mainHero h1 {
     color: var(--neutral-white);
     font-size: 3.5rem;
     font-weight: 600;
 }
 
-.heroContent h6 {
+.mainHero h6 {
     color: #c2c2c2;
     font-size: 1.25rem;
     font-weight: 400;
@@ -133,14 +134,14 @@
     border-radius: 25px;
     padding: 20px 35px 20px;
     cursor: pointer;
-    transition: 0.4s ease-in;
+    transition: 0.3s ease-in;
 }
 
 .getStartedButton:hover {
-    background-position: top;
+    background-position: right;
 }
 
-.ImageContainer {
+.mainImageContainer {
     width: 100%;
     height: 100%;
     margin-top: 65px;
@@ -149,16 +150,17 @@
     align-items: top;
 }
 
-.Image {
+.mainImage {
     width: 75%;
     height: 75%;
     background: black;
     border-radius: 45px;
-    border: 6px solid #181717;
+    border: 5px solid var(--neutral-black);
     z-index: 1;
+    box-shadow: 0px 5px 25px 25px rgba(0, 0, 0, 0.2);
 }
 
-.sectionTwo {
+.overviewSection {
     background: var(--neutral-white);
     height: 125vh;
     position: relative;
@@ -186,15 +188,15 @@
         font-size: calc(1vw + 1vh);
     }
 
-    .heroContent {
+    .mainHero {
         margin-top: 5rem;
     }
 
-    .heroContent h1 {
+    .mainHero h1 {
         font-size: calc(5vw + 1vh);
     }
 
-    .heroContent h6 {
+    .mainHero h6 {
         font-size: calc(1vw + 1vh);
     }
 }
