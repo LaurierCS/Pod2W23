@@ -6,6 +6,7 @@ export default function LandingPage() {
   return (
     <>
       <div className={landingPageStyles.mainSection}>
+        {/* <div className={landingPageStyles.circleBorder}><div className={landingPageStyles.circleBackground}></div></div> */}
         <div className={landingPageStyles.topbar}>
           <a href="#">
             <div className={landingPageStyles.topbarBrand}>
@@ -27,7 +28,7 @@ export default function LandingPage() {
           </div>
         </div>
         <div className={landingPageStyles.mainHero}>
-          <h1>An easy way to manage your expenses</h1>
+          <h1>An easy way to manage <span>your expenses</span></h1>
           <h6>Keep track of your spending across all bank accounts with ExTracker</h6>
           <button className={landingPageStyles.mainButton}>Get Started</button>
         </div>
@@ -51,6 +52,37 @@ export default function LandingPage() {
             className={landingPageStyles.overviewCardImage}
           ></Image>
           <div className={landingPageStyles.overviewImage}></div>
+        </div>
+      </div>
+
+      <div className={landingPageStyles.featuresSection}>
+        <div className={landingPageStyles.featuresHero}>
+          <h1>We Make Your Financial <span>More Well Organized</span></h1>
+          <h6>We have features that will make it easier for you to manage your financial stability. Balance, budget and plan saving for the future. Your satisfaction is our top priority.</h6>
+        </div>
+
+        <div className={landingPageStyles.featuresContainer}>
+          <div className={landingPageStyles.box}>
+            <div className={landingPageStyles.temporaryPlaceholder}></div>
+            <div className={landingPageStyles.content}>
+              <h3>Balance</h3>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+            </div>
+          </div>
+          <div className={landingPageStyles.box}>
+            <div className={landingPageStyles.temporaryPlaceholder}></div>
+            <div className={landingPageStyles.content}>
+              <h3>Budget</h3>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+            </div>
+          </div>
+          <div className={landingPageStyles.box}>
+            <div className={landingPageStyles.temporaryPlaceholder}></div>
+            <div className={landingPageStyles.content}>
+              <h3>Save</h3>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+            </div>
+          </div>
         </div>
       </div>
     </>
