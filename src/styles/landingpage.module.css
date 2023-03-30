@@ -6,9 +6,10 @@
 
 .topbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 5rem;
+    margin: 0 50px 0;
 }
 
 .topbarBrand {
@@ -45,7 +46,7 @@
     font-size: 32px; 
 }
 
-.topbarLinks {
+/* .topbarLinks {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +56,9 @@
     font-size: 18px;
 }
 
-.topbarLinks li a, .topbar a {
+.topbarLinks li a,  */
+
+.topbar a {
     text-decoration: none;
     cursor: pointer;
     color: var(--neutral-white);
@@ -105,13 +108,13 @@
     color: var(--neutral-white);
     font-size: 3.5rem;
     font-weight: 600;
-    width: 85%;
 }
 
 .mainHero h6 {
     color: #d6d6d6;
     font-size: 1.25rem;
     font-weight: 400;
+    width: 75%;
 }
 
 .rgstrButton:hover {
@@ -119,7 +122,7 @@
     background: var(--neutral-white);
 }
 
-.getStartedButton {
+.mainButton {
     font-size: calc(1vw + 1vh);
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
@@ -135,14 +138,14 @@
     transition: 0.3s ease-in;
 }
 
-.getStartedButton:hover {
+.mainButton:hover {
     background-position: right;
 }
 
 .mainImageContainer {
     width: 100%;
     height: 100%;
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: top;
@@ -156,12 +159,12 @@
     border-radius: 45px;
     border: 5px solid var(--neutral-black);
     z-index: 1;
-    box-shadow: 0px 5px 25px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 15px 15px rgba(0, 0, 0, 0.2);
 }
 
-.imageBackgroundExtension {
+.mainBackgroundExtension {
     background: var(--neutral-white);
-    height: 400px;
+    height: 300px;
     width: 100%;
     position: absolute;
     top: 60%;
@@ -170,19 +173,118 @@
 .overviewSection {
     background: var(--neutral-white);
     height: fit-content;
-    z-index: 0;
     position: relative;
-    padding-top: 100px;
+    padding: 50px 5% 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.overviewHero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 40%;
+}
+
+.overviewHero h1 {
+    color: var(--neutral-black);
+    font-size: calc(2.25vw + 1vh);
+    font-weight: 600;
+}
+
+.overviewHero h6 {
+    color: #0e0e0e;
+    font-size: calc(0.5vw + 1vh);
+    font-weight: 400;
+    max-width: 85%;
+}
+
+.overviewButton {
+    font-size: 22px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--neutral-white);
+    background: var(--neutral-black);
+    outline: 0;
+    border: 0;
+    border-radius: 35px;
+    padding: 12px 25px 12px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    margin-top: 15px;
+}
+
+.overviewButton:hover {
+    background: rgb(29, 29, 29);
+}
+
+.overviewImageContainer {
+    padding: 50px;
+    position: relative;
+}
+
+.overviewCardImage {
+    position: absolute;
+    width: 295px;
+    height: 170px;
+    transform: rotate(45deg);
+    bottom: 120px;
+    left: -125px;
+    z-index: 0;
+}
+
+.overviewImage {
+    position: relative;
+    width: 195px;
+    height: 385px;
+    background: black;
+    border-radius: 35px;
+    border: 5px solid var(--neutral-black);
+    box-shadow: 0px 3px 15px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+@media (max-width: 1350px) {
+    .mainImage {
+        height: 600px;
+    }
+
+    .overviewSection {
+        flex-direction: column;
+        padding-top: 75px;
+    }
+
+    .overviewHero {
+        max-width: none;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+    }
+
+    .overviewButton {
+        font-size: calc(1vw + 1vh);
+    }
+
+    .overviewImageContainer {
+        display: none;
+    }
+
+    .overviewCardImage {
+        width: 295px;
+        height: 170px;
+        left: -125px;
+    }
+
+    .overviewImage {
+        width: 195px;
+        height: 385px;
+    }
 }
 
 @media (max-width: 1000px) {
-    .topbar {
-        flex-direction: column;
-        height: fit-content;
-        padding-top: 25px;
-        gap: 25px;
-    }
-
     .topbarBrand h1 {
         font-size: calc(2vw + 2vh);
     }
@@ -201,10 +303,37 @@
     }
 
     .mainHero h1 {
-        font-size: calc(5vw + 1vh);
+        font-size: calc(3vw + 1vh);
     }
 
     .mainHero h6 {
-        font-size: calc(1vw + 1vh);
+        font-size: calc(0.85vw + 1vh);
+    }
+
+    .mainImage {
+        height: 450px;
+    }
+}
+
+@media (max-width: 750px) {
+    .topbar {
+        flex-direction: column;
+        height: fit-content;
+        padding-top: 25px;
+        gap: 25px;
+    }
+
+    .mainImage {
+        height: 350px;
+    }
+}
+
+@media (max-width: 500px) {
+    .overviewSection {
+        padding-top: 55px;
+    }
+
+    .mainImage {
+        height: 250px;
     }
 }
