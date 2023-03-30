@@ -8,7 +8,7 @@ interface PieData {
 }
 
 interface PieGraphProps {
-data: PieData[];
+  data: PieData[];
 }
 
 const PieGraph = ({ data }: PieGraphProps) => (
@@ -20,7 +20,6 @@ const PieGraph = ({ data }: PieGraphProps) => (
       padAngle={1}
       cornerRadius={15}
       activeOuterRadiusOffset={8}
-      colors={{ scheme: 'accent' }}
       borderWidth={0}
       enableArcLinkLabels={false}
       arcLabelsRadiusOffset={0.55}

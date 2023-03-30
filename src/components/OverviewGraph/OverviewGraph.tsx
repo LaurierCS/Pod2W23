@@ -1,16 +1,65 @@
 import styles from "./OverviewGraph.module.css";
 import { Container, Grid, Title, Text, Tabs, Stack, Button } from '@mantine/core';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PieGraph from "./PieGraph/PieGraph";
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 
 const OverviewGraph = () => {
+
+  const [activeTab, setActiveTab] = useState<string | null>('week');
+  const [interval, setInterval] = useState<number>(7);
+  const [graphData, setGraphData] = useState<ExpenseData>();
+
+  // on page load
+  useEffect(() => {
+    updateGraphData(interval);
+  });
+
+  let intervalMessage: string = `Last ${interval} days`;
+
+  const handleIntervalChange = (value: string) => {
+    setActiveTab(value);
+
+    if (value === 'week') {
+      setInterval(7);
+    } else if (value === 'month') {
+      setInterval(30);
+    } else {
+      setInterval(365);
+    }
+
+    updateGraphData(interval);
+  }
+
+  interface PieData {
+    id: string;
+    label: string;
+    value: number;
+    color: string;
+  }
+  
+  interface PieGraphProps {
+    data: PieData[];
+  }
+
+  const updateGraphData = (interval: number) => {
+    
+  }
+
+  interface ExpenseData {
+
+  }
+
+  const fetchUserExpenseData = (interval: number) => {
+    let data: ExpenseData[] = [];
+  }
 
   const data = [
     {
       "id": "elixir",
       "label": "elixir",
       "value": 152,
-      "color": "hsl(74, 70%, 50%)"
+      "color": "hsl(300, 70%, 2%)"
     },
     {
       "id": "scala",
@@ -38,8 +87,6 @@ const OverviewGraph = () => {
     }
   ];
 
-  const [activeTab, setActiveTab] = useState<string | null>('week');
-
   return(
     <Container className={styles.container}>
       <Container className={styles.nav}>
@@ -50,7 +97,7 @@ const OverviewGraph = () => {
             '&[data-active]:hover': { backgroundColor: '#2C2E33'},
             '&:hover': { backgroundColor: '#25262B'}
             } }}
-          variant="pills" value={activeTab} onTabChange={setActiveTab}>
+          variant="pills" value={activeTab} onTabChange={handleIntervalChange}>
           <Tabs.List>
             <Tabs.Tab value="week">Week</Tabs.Tab>
             <Tabs.Tab value="month">Month</Tabs.Tab>
@@ -66,6 +113,7 @@ const OverviewGraph = () => {
           <Stack className={styles.stack}>
             <Container className={styles.change}>
               <Title order={4}>Net Change</Title>
+              <Text>{intervalMessage}</Text>
             </Container>
             <Container className={styles.income}>
               <Title order={4}>Income</Title>
