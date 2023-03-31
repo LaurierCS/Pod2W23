@@ -109,18 +109,20 @@ export default function LandingPage() {
             alt="Circle"
             className={`${styles.backgroundCircle} ${styles.c6}`}
         ></Image>
-        <div className={styles.overviewHero}>
-          <h1>Keep tabs on your expenses</h1>
-          <h6>We help you easily connect all your cash, credit, loan and investment accounts.  You can see your expenses and complete financial picture in ExTracker</h6>
-          <button className={styles.overviewButton}>Get Started</button>
-        </div>
-        <div className={styles.overviewImageContainer}>
-          <Image
-            src={creditCard}
-            alt="Credit Card"
-            className={styles.overviewCardImage}
-          ></Image>
-          <div className={styles.overviewImage}></div>
+        <div className={styles.overviewContentContainer}>
+          <div className={styles.overviewHero}>
+            <h1>Keep tabs on your expenses</h1>
+            <h6>We help you easily connect all your cash, credit, loan and investment accounts.  You can see your expenses and complete financial picture in ExTracker</h6>
+            <a className={styles.overviewButton}>Get Started</a>
+          </div>
+          <div className={styles.overviewImageContainer}>
+            <Image
+              src={creditCard}
+              alt="Credit Card"
+              className={styles.overviewCardImage}
+            ></Image>
+            <div className={styles.overviewImage}></div>
+          </div>
         </div>
       </div>
 

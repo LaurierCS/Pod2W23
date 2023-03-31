@@ -289,6 +289,13 @@
     align-items: center;
 }
 
+.overviewContentContainer {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+    padding-left: 50px;
+}
+
 .overviewHero {
     display: flex;
     flex-direction: column;
@@ -319,7 +326,7 @@
     outline: 0;
     border: 0;
     border-radius: 35px;
-    padding: 12px 25px 12px;
+    padding: 10px 30px 10px;
     cursor: pointer;
     transition: 0.2s ease-in;
     margin-top: 15px;
@@ -330,24 +337,25 @@
 }
 
 .overviewImageContainer {
+    margin-left: 25px;
     padding: 50px;
     position: relative;
 }
 
 .overviewCardImage {
     position: absolute;
-    width: 325px;
-    height: 190px;
+    width: 355px;
+    height: 225px;
     transform: rotate(45deg);
     bottom: 120px;
-    left: -135px;
+    left: -155px;
     z-index: 0;
 }
 
 .overviewImage {
     position: relative;
-    width: 225px;
-    height: 450px;
+    width: 245px;
+    height: 485px;
     background: black;
     border-radius: 35px;
     border: 5px solid var(--neutral-black);
@@ -443,6 +451,10 @@
 
     .overviewSection {
         padding: 10% 3% 10% 3%;
+    }
+
+    .overviewContentContainer {
+        padding-left: 0;
     }
 
     .c4 {
