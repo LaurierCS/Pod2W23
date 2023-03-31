@@ -49,11 +49,11 @@ export default function LandingPage() {
             <li><a href="#features">Features</a></li>
           </ul>
           <div className={styles.userReg}>
-            <button className={styles.loginButton}>Log In</button>
-            <button className={styles.rgstrButton}>Sign Up</button>
+            <li><a href="/login" className={styles.loginButton}>Log In</a></li>
+            <li><a href="/register" className={styles.rgstrButton}>Sign Up</a></li>
           </div>
           <div className={styles.burgerMenuContainer}>
-            <Burger color="white" className={styles.burger} opened={opened} onClick={toggle} aria-label={label} />
+          <Burger color="white" className={styles.burger} opened={opened} onClick={toggle} aria-label={label} />
             <div className={opened ? styles.menuActive : ""}>
               {opened ? (
                 <div className={styles.burgerContentContainer}>
@@ -67,7 +67,7 @@ export default function LandingPage() {
                         <h1>ExTracker</h1>
                       </div>
                     </a>
-                    <Burger color="white" className={styles.burger} opened={opened} onClick={toggle} aria-label={label} />
+                    <Burger color="white" className={styles.burger2} opened={opened} onClick={toggle} aria-label={label} />
                   </div>
                   <ul className={styles.topbarLinksBurger}>
                     <li><a href="#overview">Overview</a></li>
