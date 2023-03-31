@@ -1,5 +1,5 @@
-import landingPageStyles from '../styles/landingpage.module.css';
 import Image from 'next/image';
+import styles from '../styles/landingpage.module.css';
 import creditCard from '../images/creditcard.png';
 import { useDisclosure } from '@mantine/hooks';
 import { Burger } from '@mantine/core';
@@ -10,41 +10,48 @@ export default function LandingPage() {
 
   return (
     <>
-      <div className={landingPageStyles.mainSection}>
-        {/* <div className={landingPageStyles.circleBorder}><div className={landingPageStyles.circleBackground}></div></div> */}
-        <div className={landingPageStyles.topbar}>
+      <div className={styles.mainSection}>
+        <div className={styles.topbar}>
           <a href="#">
-            <div className={landingPageStyles.topbarBrand}>
-              <div className={landingPageStyles.topbarLogo}>
-                <span className={landingPageStyles.circle}></span>
-                <span className={landingPageStyles.circle}></span>
+            <div className={styles.topbarBrand}>
+              <div className={styles.topbarLogo}>
+                <span className={styles.circle}></span>
+                <span className={styles.circle}></span>
               </div>
               <h1>ExTracker</h1>
             </div>
           </a>
-          <ul className={landingPageStyles.topbarLinks}>
+          <ul className={styles.topbarLinks}>
             <li><a href="#overview">Overview</a></li>
             <li><a href="#features">Features</a></li>
-            <li><a href="#team">Team</a></li>
           </ul>
-          <div className={landingPageStyles.userReg}>
-            <button className={landingPageStyles.loginButton}>Log In</button>
-            <button className={landingPageStyles.rgstrButton}>Sign Up</button>
+          <div className={styles.userReg}>
+            <button className={styles.loginButton}>Log In</button>
+            <button className={styles.rgstrButton}>Sign Up</button>
           </div>
-          <div className={landingPageStyles.burgerMenuContainer}>
-            <Burger color="white" className={landingPageStyles.burger} opened={opened} onClick={toggle} aria-label={label} />
-            <div className={opened ? landingPageStyles.menuActive : ""}>
+          <div className={styles.burgerMenuContainer}>
+            <Burger color="white" className={styles.burger} opened={opened} onClick={toggle} aria-label={label} />
+            <div className={opened ? styles.menuActive : ""}>
               {opened ? (
-                <div className={landingPageStyles.burgerContentContainer}>
-                  <ul className={landingPageStyles.topbarLinksBurger}>
+                <div className={styles.burgerContentContainer}>
+                  <div className={styles.topbar}>
+                    <a href="#">
+                      <div className={styles.topbarBrand}>
+                        <div className={styles.topbarLogo}>
+                          <span className={styles.circle}></span>
+                          <span className={styles.circle}></span>
+                        </div>
+                        <h1>ExTracker</h1>
+                      </div>
+                    </a>
+                    <Burger color="white" className={styles.burger} opened={opened} onClick={toggle} aria-label={label} />
+                  </div>
+                  <ul className={styles.topbarLinksBurger}>
                     <li><a href="#overview">Overview</a></li>
                     <li><a href="#features">Features</a></li>
-                    <li><a href="#team">Team</a></li>
+                    <li><a>Log In</a></li>
+                    <li><a>Sign Up</a></li>
                   </ul>
-                  <div className={landingPageStyles.userRegBurger}>
-                    <button className={landingPageStyles.loginButtonBurger}>Log In</button>
-                    <button className={landingPageStyles.rgstrButtonBurger}>Sign Up</button>
-                  </div>
                 </div>
               ) : ( 
                 ""
@@ -52,57 +59,57 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-        <div className={landingPageStyles.mainHero}>
+        <div className={styles.mainHero}>
           <h1>An easy way to manage <span>your expenses</span></h1>
           <h6>Keep track of your spending across all bank accounts with ExTracker</h6>
-          <button className={landingPageStyles.mainButton}>Get Started</button>
+          <button className={styles.mainButton}>Get Started</button>
         </div>
-        <div className={landingPageStyles.mainImageContainer}>
-          <div className={landingPageStyles.mainImage}></div>
-          <div className={landingPageStyles.mainBackgroundExtension}></div>
+        <div className={styles.mainImageContainer}>
+          <div className={styles.mainImage}></div>
+          <div className={styles.mainBackgroundExtension}></div>
         </div>
       </div>
       
-      <div className={landingPageStyles.overviewSection}>
-        <div className={landingPageStyles.overviewHero}>
+      <div className={styles.overviewSection}>
+        <div className={styles.overviewHero}>
           <h1>Keep tabs on your expenses</h1>
           <h6>We help you easily connect all your cash, credit, loan and investment accounts.  You can see your expenses and complete financial picture in ExTracker</h6>
-          <button className={landingPageStyles.overviewButton}>Get Started</button>
+          <button className={styles.overviewButton}>Get Started</button>
         </div>
-        <div className={landingPageStyles.overviewImageContainer}>
+        <div className={styles.overviewImageContainer}>
           <Image
             src={creditCard}
             alt="Credit Card"
-            className={landingPageStyles.overviewCardImage}
+            className={styles.overviewCardImage}
           ></Image>
-          <div className={landingPageStyles.overviewImage}></div>
+          <div className={styles.overviewImage}></div>
         </div>
       </div>
 
-      <div className={landingPageStyles.featuresSection}>
-        <div className={landingPageStyles.featuresHero}>
+      <div className={styles.featuresSection}>
+        <div className={styles.featuresHero}>
           <h1>We Make Your Financial <span>More Well Organized</span></h1>
           <h6>We have features that will make it easier for you to manage your financial stability. Balance, budget and plan saving for the future. Your satisfaction is our top priority.</h6>
         </div>
 
-        <div className={landingPageStyles.featuresContainer}>
-          <div className={landingPageStyles.box}>
-            <div className={landingPageStyles.temporaryPlaceholder}></div>
-            <div className={landingPageStyles.content}>
+        <div className={styles.featuresContainer}>
+          <div className={styles.box}>
+            <div className={styles.temporaryPlaceholder}></div>
+            <div className={styles.content}>
               <h3>Balance</h3>
               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
             </div>
           </div>
-          <div className={landingPageStyles.box}>
-            <div className={landingPageStyles.temporaryPlaceholder}></div>
-            <div className={landingPageStyles.content}>
+          <div className={styles.box}>
+            <div className={styles.temporaryPlaceholder}></div>
+            <div className={styles.content}>
               <h3>Budget</h3>
               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
             </div>
           </div>
-          <div className={landingPageStyles.box}>
-            <div className={landingPageStyles.temporaryPlaceholder}></div>
-            <div className={landingPageStyles.content}>
+          <div className={styles.box}>
+            <div className={styles.temporaryPlaceholder}></div>
+            <div className={styles.content}>
               <h3>Save</h3>
               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
             </div>

@@ -5,31 +5,13 @@
     position: relative;
 }
 
-/* .circleBorder {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background: linear-gradient(to right, red, black, black, rgb(0, 0, 0));
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.circleBackground {
-    width: 90%;
-    height: 90%;
-    border-radius: 50%;
-    background: var(--neutral-black);
-    z-index: 2;
-} */
-
 .topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: fit-content;
     padding: 25px;
+    width: 100%;
 }
 
 .topbarBrand {
@@ -76,22 +58,39 @@
     font-size: 18px;
 }
 
+.burgerContentContainer {
+    z-index: 1000;
+}
+
+.burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.burgerMenuContainer {
+    display: none;
+}
+
 .topbarLinksBurger {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     height: 100%;
     list-style: none;
-    font-size: 18px;
 }
 
-.burgerContentContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: space-between;
-    height: 100%;
+.menuActive {
+    background: var(--neutral-black);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    z-index: 4;
 }
 
 .topbarLinks li a, .topbar a {
@@ -102,25 +101,17 @@
 
 .topbarLinksBurger li {
     width: 100%;
-    display: block;
     display: flex;
     justify-content: center;
-    padding: 5px;
+    padding: 15px;
     transition: 0.2s ease-in;
     cursor: pointer;
-}
-
-.topbarLinksBurger li:first-child {
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    font-size: 25px;
+    border-bottom: 2px solid rgb(53, 53, 53);
 }
 
 .topbarLinksBurger li:hover {
     background: grey;
-}
-
-.topbarLinksBurger li a {
-    font-size: 17px;
 }
 
 .userReg {
@@ -157,22 +148,6 @@
     cursor: pointer;
     color: var(--neutral-white);
     transition: 0.2s ease-in-out;
-}
-
-.loginButtonBurger, .rgstrButtonBurger {
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    background: none;
-    outline: 0;
-    padding: 10px 15px 10px;
-    color: var(--neutral-white);
-    border: none;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-}
-
-.loginButtonBurger:hover, .rgstrButtonBurger:hover {
-    background: grey;
 }
 
 .mainHero {
@@ -335,7 +310,6 @@
 .featuresSection {
     background: var(--neutral-black);
     height: fit-content;
-    z-index: 1;
     position: relative;
     padding: 100px 5% 100px;
     display: flex;
@@ -412,25 +386,6 @@
     font-weight: 400;
 }
 
-.burgerMenuContainer {
-    display: none;
-    flex-direction: column;
-    height: fit-content;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-}
-
-.menuActive {
-    background: linear-gradient(25deg, rgb(14, 12, 12), rgb(77, 77, 77));
-    height: 200px;
-    width: 200px;
-    border-radius: 5px;
-    position: absolute;
-    left: -172px;
-    bottom: -225px;
-}
-
 @media (max-width: 1350px) {
     .mainImage {
         height: 600px;
@@ -491,7 +446,7 @@
         font-size: calc(1vw + 1vh);
     }
 
-    .burgerMenuContainer {
+    .burger, .burgerMenuContainer {
         display: flex;
     }
 
