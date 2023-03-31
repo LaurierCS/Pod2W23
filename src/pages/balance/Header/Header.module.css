@@ -1,0 +1,28 @@
+
+.Header, .title, .balance{   
+  background-color: #07080B;
+}
+
+.Header{  
+  position: relative;
+  left: 4%;
+  top: 4.5%;
+  background-color: transparent;
+}
+
+.title{
+  color: white;
+  width: fit-content;
+}
+
+.balance{
+  color:white;
+  font-size: 2vw;
+  float: right;
+  position: relative;
+  right: 10%;
+  bottom: .5em;
+}
+
+
+

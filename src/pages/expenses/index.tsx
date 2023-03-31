@@ -1,41 +1,27 @@
-// import './index.module.css'
-import styles from "../index.module.css";
+import styles from "./index.module.css";
+import {Container} from '@mantine/core'
+
+import Header from  './Header/Header'
+import Columns from './Columns/Columns'
+import Transactions from './Transactions/Transactions'
+
 export default function Home() {
     return (
+      
 
-      <div id="transactionsTab">
-        <div className="Header">
-          <h2 className="recent">Recent Transactions</h2>
-          <a className="allTrans">All Transactions ></a>
-        </div>
+      <Container id={styles.transactionsTab}>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet"/>
 
-        <div className="columnTitles">
-          
-          <div className="nameDate">
-            <p className="name">Name</p>
+        <Header></Header>
 
-            <p className="date">Date</p>
-          </div>
-
-          <div className="catAmount">
-            <p className="category">Category </p>
-
-            <p className="amount">Amount</p>
-          </div>
-        </div>
-
-        <div className="transactions">
-          <div className="transDesc">
-            <p className="title">Netflix and Chill</p>
-            <p className="date">2023-03-15</p>
-          </div>
-          <div className="transCatAmount">
-            <div className="transCat">Misc</div>  
-            <div className="transAmnt">-$9.99</div>
-          </div>
-        </div>
-
-      </div>
+        <Columns></Columns>
+        
+        <Transactions></Transactions>
+        
+        <Transactions></Transactions>
+      </Container>
     );
   }
   

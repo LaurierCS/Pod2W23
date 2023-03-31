@@ -1,1 +1,9 @@
-
+#transactionsTab{
+  width: 800px;
+  height: 500px;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background-color : #07080B;
+}

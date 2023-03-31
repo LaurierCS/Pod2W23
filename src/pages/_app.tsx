@@ -7,6 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <MantineProvider withGlobalStyles withCSSVariables withNormalizeCSS>
       <Component {...pageProps} />
+      
     </MantineProvider>
   );
 }

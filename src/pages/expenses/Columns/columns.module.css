@@ -1,0 +1,40 @@
+.columnTitles{
+  height: 80px;
+  width: 90%;
+  display: flex;
+  position:absolute;
+  left: 50px;
+  top: 90px;
+  color: #C1C2C5;
+}
+
+.name, .date, .category, .amount{
+  font-size: 17px;
+}
+
+.nameDate{
+  position: absolute;
+  left: 20px;
+}
+
+.date{
+  position: absolute;
+  top: 30px;
+  font-size: 14px;
+}
+
+.catAmount{
+  display: flex;
+  position: absolute;
+  left: 465px;
+}
+
+.amount{
+  position: absolute;
+  left: 150px;
+}
+
+.columnTitles, .name, .date, .category, .amount, .nameDate, .date, .catAmount{
+  background-color: #07080B;
+}
+

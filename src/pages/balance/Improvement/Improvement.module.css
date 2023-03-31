@@ -1,0 +1,19 @@
+#improvement, .change, .changeContainer{
+  background-color: transparent;
+}
+
+#improvement{
+  color: white;
+  position: relative;
+  top: 31%;
+}
+
+.changeContainer{
+  position: absolute;
+  left: 7.5%;
+}
+
+.change{
+  color: green;
+}
+
