@@ -5,13 +5,17 @@
     position: relative;
 }
 
-.topbar {
+.topbar, .topbarBurger {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: fit-content;
     padding: 25px;
     width: 100%;
+}
+
+.topbarBurger {
+    border-bottom: 5px solid rgb(255, 255, 255);
 }
 
 .topbarBrand {
@@ -107,7 +111,7 @@
     transition: 0.2s ease-in;
     cursor: pointer;
     font-size: 25px;
-    border-bottom: 2px solid rgb(53, 53, 53);
+    border-bottom: 1px solid rgb(175, 175, 175);
 }
 
 .topbarLinksBurger li:hover {

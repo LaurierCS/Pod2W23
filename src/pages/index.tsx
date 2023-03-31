@@ -34,7 +34,7 @@ export default function LandingPage() {
             <div className={opened ? styles.menuActive : ""}>
               {opened ? (
                 <div className={styles.burgerContentContainer}>
-                  <div className={styles.topbar}>
+                  <div className={styles.topbarBurger}>
                     <a href="#">
                       <div className={styles.topbarBrand}>
                         <div className={styles.topbarLogo}>
