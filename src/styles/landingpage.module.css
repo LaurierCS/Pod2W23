@@ -5,6 +5,58 @@
     position: relative;
 }
 
+.backgroundCircle {
+    position: absolute;
+}
+
+.c {
+    max-width: 6%;
+    min-width: 4%;
+    height: auto;
+    top: 35%;
+    left: 6%;
+}
+
+.c2 {
+    max-width: 6%;
+    min-width: 4%;
+    height: auto;
+    top: 10%;
+    right: 30%;
+}
+
+.c3 {
+    max-width: 4%;
+    min-width: 2%;
+    height: auto;
+    top: 44%;
+    right: 15%;
+}
+
+.c4 {
+    max-width: 4%;
+    min-width: 2%;
+    height: auto;
+    top: 65%;
+    left: 6%;
+}
+
+.c5 {
+    max-width: 4%;
+    min-width: 2%;
+    height: auto;
+    top: 10%;
+    right: 43%;
+}
+
+.c6 {
+    max-width: 3%;
+    min-width: 2%;
+    height: auto;
+    bottom: 15%;
+    left: 40%;
+}
+
 .topbar, .topbarBurger {
     display: flex;
     justify-content: space-between;
@@ -210,7 +262,7 @@
 .mainImageContainer {
     width: 100%;
     height: 100%;
-    margin-top: 75px;
+    margin-top: 5%;
     display: flex;
     justify-content: center;
     align-items: top;
@@ -397,7 +449,31 @@
 
     .overviewSection {
         flex-direction: column;
-        padding-top: 75px;
+        padding-top: 13%;
+    }
+
+    .c4 {
+        max-width: 4%;
+        min-width: 2%;
+        height: auto;
+        top: 65%;
+        left: 12%;
+    }
+    
+    .c5 {
+        max-width: 4%;
+        min-width: 2%;
+        height: auto;
+        top: 15%;
+        right: 35%;
+    }
+    
+    .c6 {
+        max-width: 3%;
+        min-width: 2%;
+        height: auto;
+        bottom: 15%;
+        left: 75%;
     }
 
     .overviewHero {
@@ -463,7 +539,7 @@
     }
 
     .mainBackgroundExtension {
-        height: 200px;
+        height: 185px;
     }
 
     .featuresHero {

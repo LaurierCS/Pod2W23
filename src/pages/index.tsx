@@ -1,8 +1,15 @@
+// Next Library
 import Image from 'next/image';
-import styles from '../styles/landingpage.module.css';
-import creditCard from '../images/creditcard.png';
+// Mantine Library
 import { useDisclosure } from '@mantine/hooks';
 import { Burger } from '@mantine/core';
+// Styles | Images
+import styles from '../styles/landingpage.module.css';
+import creditCard from '../images/creditcard.png';
+import circle from '../images/circle.png';
+import circle2 from '../images/circle2.png';
+import circle3 from '../images/circle3.png';
+
 
 export default function LandingPage() {
   const [opened, { toggle }] = useDisclosure(false);  
@@ -11,6 +18,22 @@ export default function LandingPage() {
   return (
     <>
       <div className={styles.mainSection}>
+        <Image
+            src={circle}
+            alt="Circle"
+            className={`${styles.backgroundCircle} ${styles.c}`}
+        ></Image>
+        <Image
+            src={circle2}
+            alt="Circle"
+            className={`${styles.backgroundCircle} ${styles.c2}`}
+        ></Image>
+        <Image
+            src={circle3}
+            alt="Circle"
+            className={`${styles.backgroundCircle} ${styles.c3}`}
+        ></Image>
+
         <div className={styles.topbar}>
           <a href="#">
             <div className={styles.topbarBrand}>
@@ -71,6 +94,21 @@ export default function LandingPage() {
       </div>
       
       <div className={styles.overviewSection}>
+      <Image
+            src={circle}
+            alt="Circle"
+            className={`${styles.backgroundCircle} ${styles.c4}`}
+        ></Image>
+        <Image
+            src={circle2}
+            alt="Circle"
+            className={`${styles.backgroundCircle} ${styles.c5}`}
+        ></Image>
+        <Image
+            src={circle3}
+            alt="Circle"
+            className={`${styles.backgroundCircle} ${styles.c6}`}
+        ></Image>
         <div className={styles.overviewHero}>
           <h1>Keep tabs on your expenses</h1>
           <h6>We help you easily connect all your cash, credit, loan and investment accounts.  You can see your expenses and complete financial picture in ExTracker</h6>
