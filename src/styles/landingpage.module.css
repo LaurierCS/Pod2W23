@@ -28,21 +28,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5rem;
-    margin: 0 50px 0;
+    height: fit-content;
+    padding: 25px;
 }
 
 .topbarBrand {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 35px;
 }
 
 .topbarLogo {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 25px;
 }
 
 .circle {
@@ -51,7 +51,7 @@
     height: 50px;
     border-radius: 50%;
     background: var(--neutral-white);
-    margin-right: -15px;    
+    margin-right: -15px;
 }
 
 .circle:first-child {
@@ -66,7 +66,7 @@
     font-size: 32px; 
 }
 
-/* .topbarLinks {
+.topbarLinks {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,18 +76,63 @@
     font-size: 18px;
 }
 
-.topbarLinks li a,  */
+.topbarLinksBurger {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+    font-size: 18px;
+}
 
-.topbar a {
+.burgerContentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+    height: 100%;
+}
+
+.topbarLinks li a, .topbar a {
     text-decoration: none;
     cursor: pointer;
     color: var(--neutral-white);
+}
+
+.topbarLinksBurger li {
+    width: 100%;
+    display: block;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+}
+
+.topbarLinksBurger li:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.topbarLinksBurger li:hover {
+    background: grey;
+}
+
+.topbarLinksBurger li a {
+    font-size: 17px;
 }
 
 .userReg {
     background: var(--neutral-black);
     display: flex;
     gap: 30px;
+}
+
+.userRegBurger {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .loginButton {
@@ -102,6 +147,7 @@
 
 .rgstrButton {
     font-family: 'Poppins', sans-serif;
+    color: var(--neutral-white);
     font-size: 18px;
     background: none;
     outline: 0;
@@ -111,6 +157,22 @@
     cursor: pointer;
     color: var(--neutral-white);
     transition: 0.2s ease-in-out;
+}
+
+.loginButtonBurger, .rgstrButtonBurger {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    background: none;
+    outline: 0;
+    padding: 10px 15px 10px;
+    color: var(--neutral-white);
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.loginButtonBurger:hover, .rgstrButtonBurger:hover {
+    background: grey;
 }
 
 .mainHero {
@@ -326,7 +388,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: start;
+    align-items: flex-start;
     box-shadow: 5px 5px 15px 15px rgba(0, 0, 0, 0.2);
     margin: 0 25px 0;
 }
@@ -348,6 +410,25 @@
     color: #adadad;
     font-size: 15px;
     font-weight: 400;
+}
+
+.burgerMenuContainer {
+    display: none;
+    flex-direction: column;
+    height: fit-content;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuActive {
+    background: linear-gradient(25deg, rgb(14, 12, 12), rgb(77, 77, 77));
+    height: 200px;
+    width: 200px;
+    border-radius: 5px;
+    position: absolute;
+    left: -172px;
+    bottom: -225px;
 }
 
 @media (max-width: 1350px) {
@@ -394,12 +475,24 @@
     }
 
     .topbarLinks {
+        display: none;
+    }
+    
+    .topbarLinks {
         font-size: calc(1.25vw + 1vh);
         gap: 25px;
     }
 
+    .userReg {
+        display: none;
+    }
+
     .loginButton, .rgstrButton {
         font-size: calc(1vw + 1vh);
+    }
+
+    .burgerMenuContainer {
+        display: flex;
     }
 
     .mainHero {
@@ -416,13 +509,10 @@
 }
 
 @media (max-width: 750px) {
-    .topbar {
-        flex-direction: column;
-        height: fit-content;
-        padding-top: 25px;
-        gap: 25px;
+    .mainHero {
+        margin-top: 3rem;
     }
-
+    
     .mainImage {
         height: 350px;
     }
@@ -457,9 +547,12 @@
 }
 
 @media (max-width: 500px) {
-    .circle {
-        width: 40px;
-        height: 40px;  
+    .topbar {
+        justify-content: space-between;
+    }
+
+    .topbarLogo {
+        display: none;
     }
 
     .mainImage {

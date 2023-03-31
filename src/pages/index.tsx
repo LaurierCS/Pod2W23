@@ -1,8 +1,13 @@
 import landingPageStyles from '../styles/landingpage.module.css';
 import Image from 'next/image';
 import creditCard from '../images/creditcard.png';
+import { useDisclosure } from '@mantine/hooks';
+import { Burger } from '@mantine/core';
 
 export default function LandingPage() {
+  const [opened, { toggle }] = useDisclosure(false);  
+  const label = opened ? 'Close navigation' : 'Open navigation';
+
   return (
     <>
       <div className={landingPageStyles.mainSection}>
@@ -17,14 +22,34 @@ export default function LandingPage() {
               <h1>ExTracker</h1>
             </div>
           </a>
-          {/* <ul className={landingPageStyles.topbarLinks}>
+          <ul className={landingPageStyles.topbarLinks}>
             <li><a href="#overview">Overview</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#team">Team</a></li>
-          </ul> */}
+          </ul>
           <div className={landingPageStyles.userReg}>
             <button className={landingPageStyles.loginButton}>Log In</button>
             <button className={landingPageStyles.rgstrButton}>Sign Up</button>
+          </div>
+          <div className={landingPageStyles.burgerMenuContainer}>
+            <Burger color="white" className={landingPageStyles.burger} opened={opened} onClick={toggle} aria-label={label} />
+            <div className={opened ? landingPageStyles.menuActive : ""}>
+              {opened ? (
+                <div className={landingPageStyles.burgerContentContainer}>
+                  <ul className={landingPageStyles.topbarLinksBurger}>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#team">Team</a></li>
+                  </ul>
+                  <div className={landingPageStyles.userRegBurger}>
+                    <button className={landingPageStyles.loginButtonBurger}>Log In</button>
+                    <button className={landingPageStyles.rgstrButtonBurger}>Sign Up</button>
+                  </div>
+                </div>
+              ) : ( 
+                ""
+              )}
+            </div>
           </div>
         </div>
         <div className={landingPageStyles.mainHero}>
@@ -38,7 +63,6 @@ export default function LandingPage() {
         </div>
       </div>
       
-
       <div className={landingPageStyles.overviewSection}>
         <div className={landingPageStyles.overviewHero}>
           <h1>Keep tabs on your expenses</h1>
