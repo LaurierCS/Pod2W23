@@ -1,0 +1,55 @@
+.authBackground {
+    background: var(--neutral-black);
+    height: 100vh;
+    width: 100vw;
+}
+
+.topbar, .topbarBurger {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    padding: 25px;
+}
+
+.topbar a {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--neutral-white);
+}
+
+.topbarBrand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topbarLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.circle {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--neutral-white);
+    margin-right: -15px;
+}
+
+.circle:first-child {
+    background: linear-gradient(90deg, #22A4C0, #5526DB);
+}
+
+.circle:last-child {
+    background: linear-gradient(180deg, #22A4C0, #5526DB);
+}
+
+.topbarBrand h1 {
+    font-weight: 800;
+    font-size: 32px; 
+}

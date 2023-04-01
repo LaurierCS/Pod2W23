@@ -35,7 +35,7 @@ export default function LandingPage() {
         ></Image>
 
         <div className={styles.topbar}>
-          <a href="#">
+          <a href="/">
             <div className={styles.topbarBrand}>
               <div className={styles.topbarLogo}>
                 <span className={styles.circle}></span>
@@ -72,8 +72,8 @@ export default function LandingPage() {
                   <ul className={styles.topbarLinksBurger}>
                     <li onClick={toggle}><a href="#overview">Overview</a></li>
                     <li onClick={toggle}><a href="#features">Features</a></li>
-                    <li onClick={toggle}><a>Log In</a></li>
-                    <li onClick={toggle}><a>Sign Up</a></li>
+                    <li onClick={toggle}><a href="/login">Log In</a></li>
+                    <li onClick={toggle}><a href="/register">Sign Up</a></li>
                   </ul>
                 </div>
               ) : ( 
