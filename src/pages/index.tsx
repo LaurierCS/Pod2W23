@@ -2,9 +2,7 @@ import OverviewGraph from "../components/OverviewGraph/OverviewGraph";
 import { useState } from "react";
 import { collection, addDoc } from 'firebase/firestore';
 import { app, db } from '../scripts/firebase/config';
-
-
-
+import categoryToColor from "../tools/categoryToColor";
 
 export default function Home() {
   return (
@@ -15,16 +13,19 @@ export default function Home() {
   );
 }
 
-
 const TestingPieGraph = () => {
   interface ExpenseData {
     name?: string;
     amount?: number;
-    date?: Date;
-    category?: string;
+    date?: string;
+    category?: CategoryDetails;
     details?: ExpenseDataDetails;
   }
 
+  interface CategoryDetails {
+    name?: string;
+    color?: string;
+  }
 
   interface ExpenseDataDetails {
     recurring: boolean;
@@ -32,13 +33,7 @@ const TestingPieGraph = () => {
     timePeriod: string;
   }
 
-
-
-
-
-
   const [expenseData, setExpenseData] = useState<ExpenseData>({});
-
 
   const setName = (e) => {
     setExpenseData(curr => ({
@@ -47,14 +42,12 @@ const TestingPieGraph = () => {
     }))
   }
 
-
   const setAmount = (e) => {
     setExpenseData(curr => ({
       ...curr,
-      amount: e.target.value
+      amount: Number(e.target.value)
     }))
   }
-
 
   const setDate = (e) => {
     setExpenseData(curr => ({
@@ -63,16 +56,16 @@ const TestingPieGraph = () => {
     }))
   }
 
-
   const setCategory = (e) => {
+    const categoryColor = categoryToColor(e.target.value);
     setExpenseData(curr => ({
       ...curr,
-      category: e.target.value
+      category: {name: e.target.value, color: categoryColor}
     }))
   }
 
-
   const addExpense = () => {
+    console.log(expenseData);
     addDoc(collection(db, "expenses"), expenseData);
   }
   return(
@@ -88,10 +81,14 @@ const TestingPieGraph = () => {
       <br />
       <h3>Category</h3>
       <select onChange={setCategory}>
-        <option>Entertainment</option>
         <option>Food</option>
-        <option>Rent</option>
-        <option>Insurance</option>
+        <option>Travel</option>
+        <option>Entertainment</option>
+        <option>Shopping</option>
+        <option>Health</option>
+        <option>Bills</option>
+        <option>Other</option>
+
       </select>
       <br />
       <button onClick={addExpense}>Add Expense</button>

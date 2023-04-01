@@ -2,57 +2,11 @@ import styles from "./OverviewGraph.module.css";
 import { Container, Grid, Title, Text, Tabs, Stack, Button } from '@mantine/core';
 import { useState, useEffect } from 'react';
 import PieGraph from "./PieGraph/PieGraph";
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
+import { app, db } from '../../scripts/firebase/config';
+import intervalToDate from '../../tools/intervalToDate';
 
 const OverviewGraph = () => {
-
-  const [activeTab, setActiveTab] = useState<string | null>('week');
-  const [interval, setInterval] = useState<number>(7);
-  const [graphData, setGraphData] = useState<ExpenseData>();
-
-  // on page load
-  useEffect(() => {
-    updateGraphData(interval);
-  });
-
-  let intervalMessage: string = `Last ${interval} days`;
-
-  const handleIntervalChange = (value: string) => {
-    setActiveTab(value);
-
-    if (value === 'week') {
-      setInterval(7);
-    } else if (value === 'month') {
-      setInterval(30);
-    } else {
-      setInterval(365);
-    }
-
-    updateGraphData(interval);
-  }
-
-  interface PieData {
-    id: string;
-    label: string;
-    value: number;
-    color: string;
-  }
-  
-  interface PieGraphProps {
-    data: PieData[];
-  }
-
-  const updateGraphData = (interval: number) => {
-    
-  }
-
-  interface ExpenseData {
-
-  }
-
-  const fetchUserExpenseData = (interval: number) => {
-    let data: ExpenseData[] = [];
-  }
 
   const data = [
     {
@@ -87,6 +41,68 @@ const OverviewGraph = () => {
     }
   ];
 
+  interface PieData {
+    id: string;
+    label: string;
+    value: number;
+    color: string;
+  }
+
+  interface ExpenseData {
+    name?: string;
+    amount?: number;
+    date?: string;
+    category?: CategoryDetails;
+    details?: ExpenseDataDetails;
+  }
+
+  interface CategoryDetails {
+    name?: string;
+    color?: string;
+  }
+
+  interface ExpenseDataDetails {
+    recurring: boolean;
+    interval: number;
+    timePeriod: string;
+  }
+
+  const [activeTab, setActiveTab] = useState<string | null>('week');
+  const [interval, setInterval] = useState<number>(7);
+
+  useEffect(() => {
+    const data: ExpenseData[] = [];
+    const getExpenseData = async () => {
+      const q = query(collection(db, "expenses"), 
+      where("date", ">=", intervalToDate(interval)),
+      where("date", "<=", intervalToDate(0)));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        data.push(doc.data());
+        console.log(doc.id, " => ", doc.data());
+    });
+    };
+    data.forEach((expense) => {});
+    getExpenseData();
+  }, [interval]);
+
+  const [graphData, setGraphData] = useState<PieData[]>(data);
+
+  let intervalMessage: string = `Last ${interval} days`;
+
+  const handleIntervalChange = (value: string) => {
+    setActiveTab(value);
+
+    if (value === 'week') {
+      setInterval(7);
+    } else if (value === 'month') {
+      setInterval(30);
+    } else {
+      setInterval(365);
+    }
+
+  }
+
   return(
     <Container className={styles.container}>
       <Container className={styles.nav}>
@@ -107,7 +123,7 @@ const OverviewGraph = () => {
       </Container>
       <Container className={styles.overview}>
         <Container className={styles.graph}>
-          <PieGraph data={data}></PieGraph>
+          <PieGraph data={graphData}></PieGraph>
         </Container>
         <Container className={styles.sideinfo}>
           <Stack className={styles.stack}>
@@ -120,6 +136,7 @@ const OverviewGraph = () => {
             </Container>
             <Container className={styles.expenses}>
               <Title order={4}>Expenses</Title>
+              <Text>{expenseAmount}</Text>
             </Container>
           </Stack>
         </Container>
