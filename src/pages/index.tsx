@@ -70,10 +70,10 @@ export default function LandingPage() {
                     <Burger color="white" className={styles.burger2} opened={opened} onClick={toggle} aria-label={label} />
                   </div>
                   <ul className={styles.topbarLinksBurger}>
-                    <li><a href="#overview">Overview</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a>Log In</a></li>
-                    <li><a>Sign Up</a></li>
+                    <li onClick={toggle}><a href="#overview">Overview</a></li>
+                    <li onClick={toggle}><a href="#features">Features</a></li>
+                    <li onClick={toggle}><a>Log In</a></li>
+                    <li onClick={toggle}><a>Sign Up</a></li>
                   </ul>
                 </div>
               ) : ( 
@@ -93,7 +93,7 @@ export default function LandingPage() {
         </div>
       </div>
       
-      <div className={styles.overviewSection}>
+      <div id="overview" className={styles.overviewSection}>
       <Image
             src={circle}
             alt="Circle"
@@ -126,7 +126,7 @@ export default function LandingPage() {
         </div>
       </div>
 
-      <div className={styles.featuresSection}>
+      <div id="features" className={styles.featuresSection}>
         <div className={styles.featuresHero}>
           <h1>We Make Your Financial <span>More Well Organized</span></h1>
           <h6>We have features that will make it easier for you to manage your financial stability. Balance, budget and plan saving for the future. Your satisfaction is our top priority.</h6>
