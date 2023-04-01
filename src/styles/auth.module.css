@@ -3,8 +3,8 @@
         65deg,
         rgba(0, 0, 0, 1),
         rgba(0, 0, 0, 0.9),
-        rgba(0, 0, 0, 0.75),
-        transparent
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.75)
       ), url('../images/coinsbackground.jpg');
     background-position: center;
     background-size: cover;
@@ -13,7 +13,7 @@
     width: 100vw;
 }
 
-.topbar, .topbarBurger {
+.topbar {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -32,6 +32,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.topbarBrand h1 {
+    font-weight: 800;
+    font-size: 36px; 
 }
 
 .topbarLogo {
@@ -58,7 +63,97 @@
     background: linear-gradient(180deg, #22A4C0, #5526DB);
 }
 
-.topbarBrand h1 {
-    font-weight: 800;
-    font-size: 32px; 
+.authContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: fit-content;
+    padding: 75px 50px 50px 75px;
+}
+
+.authHero {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: var(--neutral-white);
+}
+
+.authHero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: calc(3.5vw + 1vh);
+}
+
+.authHero h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(1.5vw + 1vh);
+    font-weight: 400;
+}
+
+.authHero h3 span {
+    color: #38A0FF;
+    cursor: pointer;
+}
+
+.authHero h3 span:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    .authBackground {
+        background-image: linear-gradient(
+            65deg,
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 1),
+            rgba(0, 0, 0, 0.95),
+            transparent
+          ), url('../images/coinsbackground.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+@media (max-width: 750px) {
+    .authBackground {
+        background: var(--neutral-black);
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .authContainer {
+        padding: 50px 25px 25px 25px;
+    }
+
+    .authHero {
+        gap: 5px;
+    }
+
+    .authHero h1 {
+        font-size: calc(5vw + 1vh);
+    }
+    
+    .authHero h3 {
+        font-size: calc(2.5vw + 1vh);
+    }
+
+    .authHero {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .topbar {
+        justify-content: center;
+    }
+
+    .topbarLogo {
+        display: none;
+    }
 }

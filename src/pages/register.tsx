@@ -16,6 +16,13 @@ function Register() {
                         </div>
                     </a>
                 </div>
+                <div className={styles.authContainer}>
+                    <div className={styles.authHero}>
+                        <h3>START FOR FREE</h3>
+                        <h1>Create New Account</h1>
+                        <h3>Already A Member? <span>Log in</span></h3>
+                    </div>
+                </div>
             </div>
         </>
     )
