@@ -55,7 +55,7 @@ function Login() {
                             }}
                             label="Email" 
                             placeholder="Email" 
-                            size="lg"
+                            size="xl"
                             withAsterisk
                             rightSection={<IconMail className={styles.inputIcons} />}
                             {...form.getInputProps('email')} />
@@ -69,7 +69,7 @@ function Login() {
                             }}
                             label="Password" 
                             placeholder="Password" 
-                            size="lg"
+                            size="xl"
                             withAsterisk
                             rightSection={<IconEye className={styles.inputIcons} />}
                             {...form.getInputProps('password')} />
