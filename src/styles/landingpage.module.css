@@ -624,13 +624,14 @@
     .mainBackgroundExtension {
         height: 100px;
     }
-}
 
-@media (max-width: 350px) {
     .box {
         width: 250px;
         height: 300px;
     }
+}
+
+@media (max-width: 350px) {
     .c5 {
         top: 25%;
     }

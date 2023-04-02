@@ -1,10 +1,12 @@
 .authBackground {
     background-image: linear-gradient(
         65deg,
-        rgba(0, 0, 0, 1),
-        rgba(0, 0, 0, 0.9),
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.75)
+        rgba(7, 8, 11, 1),
+        rgba(7, 8, 11, 1),
+        rgba(7, 8, 11, 1),
+        rgba(7, 8, 11, 1),
+        rgba(7, 8, 11, 0.85),
+        transparent
       ), url('../images/coinsbackground.jpg');
     background-position: center;
     background-size: cover;
@@ -75,8 +77,9 @@
 .authHero {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
     color: var(--neutral-white);
+    width: fit-content;
 }
 
 .authHero h1 {
@@ -100,23 +103,69 @@
     text-decoration: underline;
 }
 
-@media (max-width: 1000px) {
-    .authBackground {
-        background-image: linear-gradient(
-            65deg,
-            rgba(0, 0, 0, 1),
-            rgba(0, 0, 0, 1),
-            rgba(0, 0, 0, 1),
-            rgba(0, 0, 0, 1),
-            rgba(0, 0, 0, 0.95),
-            transparent
-          ), url('../images/coinsbackground.jpg');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 100vh;
-        width: 100vw;
-    }
+.userForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 50px;
+}
+
+.nameForm {
+    display: flex;
+    gap: 5%;
+}
+
+.inputLabel {
+    color: var(--neutral-white);
+    font-size: calc(1vw + 1vh);
+    margin-left: 2px;
+}
+
+.inputField {
+    color: var(--neutral-white);
+    background: #0B0B0C;
+    border: 2px solid var(--neutral-white);
+    border-radius: 12px;
+    padding: 3px 15px 3px;
+    height: fit-content;
+    margin-top: 3px;
+}
+
+.inputField::placeholder {
+    color: var(--neutral-white);
+    font-weight: 400;
+}
+
+.inputError {
+    margin-left: 5px;
+    margin-top: 8px;
+}
+
+.regButtonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.regButton {
+    font-size: calc(1vw + 1vh);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--neutral-white);
+    margin-top: 25px;
+    background-image: linear-gradient(45deg, #03D2FF, #8139f3, #8139f3);
+    background-size: 200%;
+    outline: 0;
+    border: 0;
+    border-radius: 15px;
+    padding: 20px 35px 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+}
+
+.regButton:hover {
+    background-position: top;
 }
 
 @media (max-width: 750px) {
@@ -127,6 +176,8 @@
     }
 
     .authContainer {
+        justify-content: center;
+        align-items: center;
         padding: 50px 25px 25px 25px;
     }
 
@@ -145,6 +196,15 @@
     .authHero {
         text-align: center;
         width: 100%;
+    }
+
+    .userForm {
+        border: none;
+    }
+
+    .nameForm {
+        flex-direction: column;
+        gap: 15px;
     }
 }
 

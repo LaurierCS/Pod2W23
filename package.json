@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/server": "^11.10.0",
     "@mantine/core": "^6.0.2",
+    "@mantine/form": "^6.0.5",
     "@mantine/hooks": "^6.0.2",
     "@mantine/next": "^6.0.2",
     "@nivo/bar": "^0.80.0",
@@ -24,7 +25,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "swiper": "^9.1.1",
-    "typescript": "5.0.2"
+    "typescript": "5.0.2",
+    "yup": "^1.0.2"
   },
   "devDependencies": {
     "prisma": "^4.11.0"
