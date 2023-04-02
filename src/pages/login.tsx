@@ -6,19 +6,15 @@ import * as Yup from 'yup';
 // Styles | Images
 import styles from '../styles/auth.module.css';
 
-function Register() {
+function Login() {
     // Validation
     let userSchema = Yup.object({
-        firstName: Yup.string().required('First name is a required field'),
-        lastName: Yup.string().required('Last name is a required field'),
-        email: Yup.string().required('Email is a required field').email('Email must be valid'),
-        password: Yup.string().min(8, 'Password must be between 8-16 characters').max(16, 'Password must be between 8-16 characters'),
+        email: Yup.string().required('Invalid email').email('Invalid email'),
+        password: Yup.string().min(8, 'Invalid password').max(16, 'Invalid password'),
     });
 
     const form = useForm({
         initialValues: {
-          firstName: '',
-          lastName: '',
           email: '',
           password: ''
         },
@@ -40,44 +36,13 @@ function Register() {
                         </div>
                     </a>
                 </div>
-                <div className={styles.authContainer}>
+                <div className={`${styles.authContainer} ${styles.authContainerLogin}`}>
                     <div className={styles.authHero}>
-                        <h3>START FOR FREE</h3>
-                        <h1>Create New Account</h1>
-                        <h3>Already a member? <span><a href="/login">Log in</a></span></h3>
+                        <h3>Welcome Back!</h3>
+                        <h1>Sign In</h1>
+                        <h3>Not a member? <span><a href="/register">Register</a></span></h3>
                     </div>
                     <form className={styles.userForm} onSubmit={form.onSubmit(() => {})}>
-                        <Flex
-                            className={styles.flexbox}
-                            justify="flex-start"
-                            align="center"
-                            gap="50px"
-                        >
-                            <TextInput 
-                                classNames={{
-                                    root: styles.inputRoot,
-                                    label: styles.inputLabel,
-                                    input: styles.inputField,
-                                    error: styles.inputError,
-                                }}
-                                label="First Name" 
-                                placeholder="First Name" 
-                                size="lg"
-                                withAsterisk
-                                {...form.getInputProps('firstName')} />
-                            <TextInput 
-                                classNames={{
-                                    root: styles.inputRoot,
-                                    label: styles.inputLabel,
-                                    input: styles.inputField,
-                                    error: styles.inputError,
-                                }}
-                                label="Last Name" 
-                                placeholder="Last Name" 
-                                size="lg"
-                                withAsterisk
-                                {...form.getInputProps('lastName')} />
-                        </Flex>
                         <TextInput 
                             classNames={{
                                 root: styles.inputRoot,
@@ -103,7 +68,7 @@ function Register() {
                             withAsterisk
                             {...form.getInputProps('password')} />
                         <div className={styles.authButtonContainer}>
-                        <button className={styles.authButton} type="submit">Create Account</button>
+                        <button className={styles.authButton} type="submit">Login</button>
                         </div>
                     </form>
                 </div>
@@ -112,4 +77,4 @@ function Register() {
     )
 }
 
-export default Register
+export default Login
