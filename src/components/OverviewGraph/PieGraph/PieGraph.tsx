@@ -1,19 +1,25 @@
 import { ResponsivePie } from '@nivo/pie';
+import categoryToColor from '../../../tools/categoryToColor';
 
-interface PieData {
+interface SliceData {
   id: string;
   label: string;
   value: number;
-  color: string;
+}
+
+interface PieData {
+  data: SliceData[];
+  colors: string[];
 }
 
 interface PieGraphProps {
-  data: PieData[];
+  data: PieData;
 }
 
 const PieGraph = ({ data }: PieGraphProps) => (
   <ResponsivePie
-      data={data}
+      colors={data.colors}
+      data={data.data}
       margin={{ top: 40, right: 10, bottom: 90, left: 10 }}
       sortByValue={true}
       innerRadius={0.15}

@@ -1,7 +1,7 @@
 import OverviewGraph from "../components/OverviewGraph/OverviewGraph";
 import { useState } from "react";
 import { collection, addDoc } from 'firebase/firestore';
-import { app, db } from '../scripts/firebase/config';
+import { db } from '../scripts/firebase/config';
 import categoryToColor from "../tools/categoryToColor";
 
 export default function Home() {

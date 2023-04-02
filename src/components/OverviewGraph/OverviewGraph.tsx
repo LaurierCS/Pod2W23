@@ -3,62 +3,43 @@ import { Container, Grid, Title, Text, Tabs, Stack, Button } from '@mantine/core
 import { useState, useEffect } from 'react';
 import PieGraph from "./PieGraph/PieGraph";
 import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
-import { app, db } from '../../scripts/firebase/config';
+import { db } from '../../scripts/firebase/config';
 import intervalToDate from '../../tools/intervalToDate';
 
 const OverviewGraph = () => {
 
+  const colors = ['#ffffff'];
+
   const data = [
     {
-      "id": "elixir",
-      "label": "elixir",
-      "value": 152,
-      "color": "hsl(300, 70%, 2%)"
-    },
-    {
-      "id": "scala",
-      "label": "scala",
-      "value": 21,
-      "color": "hsl(309, 70%, 50%)"
-    },
-    {
-      "id": "css",
-      "label": "css",
-      "value": 262,
-      "color": "hsl(117, 70%, 50%)"
-    },
-    {
-      "id": "erlang",
-      "label": "erlang",
-      "value": 598,
-      "color": "hsl(204, 70%, 50%)"
-    },
-    {
-      "id": "haskell",
-      "label": "haskell",
-      "value": 142,
-      "color": "hsl(59, 70%, 50%)"
+      "id": "",
+      "label": "",
+      "value": 0
     }
   ];
+
+  interface PieProps {
+    data: PieData[];
+    colors: string[];
+  }
 
   interface PieData {
     id: string;
     label: string;
     value: number;
-    color: string;
   }
 
   interface ExpenseData {
-    name?: string;
-    amount?: number;
-    date?: string;
-    category?: CategoryDetails;
+    name: string;
+    amount: number;
+    date: string;
+    category: CategoryDetails;
     details?: ExpenseDataDetails;
   }
 
   interface CategoryDetails {
-    name?: string;
-    color?: string;
+    name: string;
+    color: string;
   }
 
   interface ExpenseDataDetails {
@@ -67,28 +48,78 @@ const OverviewGraph = () => {
     timePeriod: string;
   }
 
+  interface Summary {
+    title: string;
+    net: number;
+    income: number;
+    expenses: number;
+  }
+
   const [activeTab, setActiveTab] = useState<string | null>('week');
   const [interval, setInterval] = useState<number>(7);
+  const [summary, setSummary] = useState<Summary>({title: `Last ${interval} Days`, net: 0, income: 0, expenses: 0});
 
   useEffect(() => {
-    const data: ExpenseData[] = [];
+
     const getExpenseData = async () => {
-      const q = query(collection(db, "expenses"), 
-      where("date", ">=", intervalToDate(interval)),
-      where("date", "<=", intervalToDate(0)));
+
+      const data: ExpenseData[] = [];
+      const categories: string[] = [];
+      const categoryAmounts: PieData[] = [];
+      const colors: string[] = [];
+      let income: number = 0;
+      let expenses: number = 0;
+
+      const q = query(collection(db, "expenses"),
+        where("date", ">=", intervalToDate(interval)),
+        where("date", "<=", intervalToDate(0)));
+
       const querySnapshot = await getDocs(q);
+
       querySnapshot.forEach((doc) => {
         data.push(doc.data());
         console.log(doc.id, " => ", doc.data());
-    });
+      });
+
+      console.log(data);
+
+      data.forEach((expense) => {
+        if (!colors.includes(expense.category.color)) {
+          colors.push(expense.category.color);
+        }
+        if (!categories.includes(expense.category.name)) {
+          categories.push(expense.category.name);
+        }
+
+        let i: number = categoryAmounts.findIndex(e => e.label === expense.category.name);
+        if (i === -1) {
+          categoryAmounts.push({id: expense.category.name.toLowerCase(), label: expense.category.name, value: (Math.round((expense.amount + Number.EPSILON) * 100) / 100)});
+        } else {
+          categoryAmounts[i].value += (Math.round((expense.amount + Number.EPSILON) * 100) / 100);
+          categoryAmounts[i].value = Math.round((categoryAmounts[i].value + Number.EPSILON) * 100) / 100;
+        }
+
+        expenses += expense.amount;
+
+      });
+
+      setSummary({
+        title: `Last ${interval} days:`,
+        net: income - expenses,
+        income: income,
+        expenses: expenses
+      });
+
+      setGraphData(() => ({
+        data: categoryAmounts,
+        colors: colors
+      }));
+
     };
-    data.forEach((expense) => {});
     getExpenseData();
   }, [interval]);
 
-  const [graphData, setGraphData] = useState<PieData[]>(data);
-
-  let intervalMessage: string = `Last ${interval} days`;
+  const [graphData, setGraphData] = useState<PieProps>({data: data, colors: colors});
 
   const handleIntervalChange = (value: string) => {
     setActiveTab(value);
@@ -127,16 +158,18 @@ const OverviewGraph = () => {
         </Container>
         <Container className={styles.sideinfo}>
           <Stack className={styles.stack}>
+            <Text className={styles.summaryTitle}>{summary.title}</Text>
             <Container className={styles.change}>
-              <Title order={4}>Net Change</Title>
-              <Text>{intervalMessage}</Text>
+              <Title order={5}>Net Change</Title>
+              <Text>${summary.net.toFixed(2)}</Text>
             </Container>
             <Container className={styles.income}>
-              <Title order={4}>Income</Title>
+              <Title order={5}>Income</Title>
+              <Text>${summary.income.toFixed(2)}</Text>
             </Container>
             <Container className={styles.expenses}>
-              <Title order={4}>Expenses</Title>
-              <Text>{expenseAmount}</Text>
+              <Title order={5}>Expenses</Title>
+              <Text>${summary.expenses.toFixed(2)}</Text>
             </Container>
           </Stack>
         </Container>
