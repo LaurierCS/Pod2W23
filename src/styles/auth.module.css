@@ -23,7 +23,7 @@
     width: 100%;
     height: 6rem;
     padding: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 65px;
 }
 
 .topbar a {
@@ -221,6 +221,7 @@
 
 @media (max-width: 500px) {
     .topbar {
+        margin-bottom: 25px;
         justify-content: center;
     }
 

@@ -7,8 +7,6 @@ import * as Yup from 'yup';
 import styles from '../styles/auth.module.css';
 
 function Register() {
-    // Breakpoints
-    
     // Validation
     let userSchema = Yup.object({
         firstName: Yup.string().required('First name is a required field'),
