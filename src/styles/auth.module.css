@@ -149,6 +149,18 @@
     font-size: calc(0.5vw + 1vh);
 }
 
+.inputIcons {
+    color:rgb(197, 197, 197);
+    stroke-width: 1.25;
+    width: 65%;
+    height: 75%;
+    cursor: pointer;
+}
+
+.inputRightSection {
+    margin-right: 5px;
+}
+
 .inputError {
     margin-left: 5px;
     margin-top: 8px;
