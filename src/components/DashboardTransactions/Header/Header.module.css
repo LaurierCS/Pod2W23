@@ -1,0 +1,31 @@
+.recent, .allTrans, .transactionsLink{
+  color: white;
+}
+
+.recent{
+  display:inline-block; 
+  position: relative;
+  left: 50px;
+  font-size: 35px;
+  background-color: #07080B;
+}
+
+.allTrans, .transactionsLink{
+  background-color: #1F1F1F;
+  width: 194.68px;
+  height: 44.31px;
+}
+
+.allTrans{
+  font-size: 18px;
+  position: relative;
+  margin-left: 220px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  bottom: 5px;
+}
+
+.Header{
+  border-radius: 50px;    
+  background-color: #07080B;
+}

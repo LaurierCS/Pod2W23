@@ -4,7 +4,7 @@ import { MantineProvider } from "@mantine/core";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <MantineProvider withGlobalStyles withCSSVariables withNormalizeCSS>
+    <MantineProvider>
       <Component {...pageProps} />
     </MantineProvider>
   );
