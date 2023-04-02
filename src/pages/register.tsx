@@ -1,12 +1,15 @@
 // Mantine Library
+import { Flex, TextInput } from '@mantine/core';
 import { useForm, yupResolver } from '@mantine/form';
-import { TextInput } from '@mantine/core';
 // Yup Validation Library
 import * as Yup from 'yup';
 // Styles | Images
 import styles from '../styles/auth.module.css';
 
 function Register() {
+    // Breakpoints
+    
+    // Validation
     let userSchema = Yup.object({
         firstName: Yup.string().required('First name is a required field'),
         lastName: Yup.string().required('Last name is a required field'),
@@ -46,53 +49,61 @@ function Register() {
                         <h3>Already A Member? <span>Log in</span></h3>
                     </div>
                     <form className={styles.userForm} onSubmit={form.onSubmit(() => {})}>
-                        <div className={styles.nameForm}>
+                        <Flex
+                            className={styles.flexbox}
+                            justify="flex-start"
+                            align="center"
+                            gap="50px"
+                        >
                             <TextInput 
-                                classNames={{ 
+                                classNames={{
+                                    root: styles.inputRoot,
                                     label: styles.inputLabel,
                                     input: styles.inputField,
                                     error: styles.inputError,
                                 }}
                                 label="First Name" 
                                 placeholder="First Name" 
-                                size="lg"
+                                size="md"
                                 withAsterisk
                                 {...form.getInputProps('firstName')} />
                             <TextInput 
-                                classNames={{ 
+                                classNames={{
+                                    root: styles.inputRoot,
                                     label: styles.inputLabel,
                                     input: styles.inputField,
                                     error: styles.inputError,
                                 }}
                                 label="Last Name" 
                                 placeholder="Last Name" 
-                                size="lg"
+                                size="md"
                                 withAsterisk
                                 {...form.getInputProps('lastName')} />
-                        </div>
+                        </Flex>
                         <TextInput 
-                            classNames={{ 
+                            classNames={{
+                                root: styles.inputRoot,
                                 label: styles.inputLabel,
                                 input: styles.inputField,
                                 error: styles.inputError,
                             }}
                             label="Email" 
                             placeholder="Email" 
-                            size="lg"
+                            size="md"
                             withAsterisk
                             {...form.getInputProps('email')} />
                         <TextInput 
                             classNames={{ 
+                                root: styles.inputRoot,
                                 label: styles.inputLabel,
                                 input: styles.inputField,
                                 error: styles.inputError,
                             }}
                             label="Password" 
                             placeholder="Password" 
-                            size="lg"
+                            size="md"
                             withAsterisk
                             {...form.getInputProps('password')} />
-                        
                         <div className={styles.regButtonContainer}>
                         <button className={styles.regButton} type="submit">Create Account</button>
                         </div>
