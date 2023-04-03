@@ -1,19 +1,21 @@
-const categoryToColor = (category: any) => {
+const categoryToColor = (category: string): string => {
+  let color: string = '#FFFFFF';
   switch (category) {
     case 'Food':
-      return '#FFC107';
+      color = '#FFC107';
     case 'Travel':
-      return '#FF5722';
+      color = '#FF5722';
     case 'Entertainment':
-      return '#9C27B0';
+      color = '#9C27B0';
     case 'Shopping':
-      return '#2196F3';
+      color = '#2196F3';
     case 'Health':
-      return '#4CAF50';
+      color = '#4CAF50';
     case 'Bills':
-      return '#F44336';
+      color = '#F44336';
     case 'Other':
-      return '#9E9E9E';
+      color = '#9E9E9E';
   }
+  return color;
 };
 export default categoryToColor;

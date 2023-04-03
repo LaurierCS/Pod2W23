@@ -5,13 +5,11 @@ import { getFirestore } from "firebase/firestore";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 
-const config = {
+// paste config
 
-};
-
-console.log(config);
+console.log(firebaseConfig);
 
 // Initialize Firebase
-export const app = initializeApp(config);
+export const app = initializeApp(firebaseConfig);
 
 export const db = getFirestore(app);

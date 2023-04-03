@@ -1,5 +1,4 @@
 import { ResponsivePie } from '@nivo/pie';
-import categoryToColor from '../../../tools/categoryToColor';
 
 interface SliceData {
   id: string;

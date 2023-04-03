@@ -19,7 +19,6 @@ const TestingPieGraph = () => {
     amount?: number;
     date?: string;
     category?: CategoryDetails;
-    details?: ExpenseDataDetails;
   }
 
   interface CategoryDetails {
@@ -27,13 +26,7 @@ const TestingPieGraph = () => {
     color?: string;
   }
 
-  interface ExpenseDataDetails {
-    recurring: boolean;
-    interval: number;
-    timePeriod: string;
-  }
-
-  const [expenseData, setExpenseData] = useState<ExpenseData>({});
+  const [expenseData, setExpenseData] = useState<ExpenseData>({category: {name: 'Food', color: categoryToColor('Food')}});
 
   const setName = (e) => {
     setExpenseData(curr => ({

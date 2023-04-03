@@ -4,7 +4,6 @@ const intervalToDate = (interval: number) => {
   const month = d.getMonth() + 1;
   const day = d.getDate();
   const date = `${year}-${(month).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}-${(day).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false})}`;
-  console.log(date);
   return date;
 }
 
