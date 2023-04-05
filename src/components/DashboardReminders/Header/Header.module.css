@@ -1,0 +1,27 @@
+#Header,.reminders{
+  background-color: transparent;
+}
+
+#Header{
+  position: absolute;
+  top: 2%;
+  width: 100%;
+}
+
+.reminders{
+  color: white;
+  font-size: 200%;
+  position: relative;
+  left: 3%;
+}
+
+.calView{
+  color: white;
+  background-color: #1F1F1F;
+  border-radius: 10px;
+  padding: .7% 4% .7% 4%;
+  float: right;  
+  position: absolute;
+  top: 17%;
+  right: 2%;
+}

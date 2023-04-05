@@ -1,4 +1,4 @@
 import DashboardBalance from "./DashboardBalance";
 import DashboardTransactions from "./DashboardTransactions";
-
-export { DashboardTransactions, DashboardBalance };
+import DashboardReminders from './DashboardReminders';
+export { DashboardTransactions, DashboardBalance, DashboardReminders };

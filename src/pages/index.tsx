@@ -1,7 +1,10 @@
+import { DashboardBalance, DashboardTransactions, DashboardReminders } from "@/components";
 export default function Home() {
   return (
     <>
-      <h1>Hello World</h1>
+    <DashboardBalance></DashboardBalance>
+    <DashboardTransactions></DashboardTransactions>
+    <DashboardReminders></DashboardReminders>
     </>
   );
 }

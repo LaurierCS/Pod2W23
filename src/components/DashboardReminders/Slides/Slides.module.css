@@ -1,0 +1,20 @@
+.slideOne, .slideTwo, .slideThree{
+  background-color: blue;
+  border: 3px solid white;
+}
+
+#carouselTab{
+  max-width: 70%;
+  border-radius: 25px;
+  margin:auto;
+  position: relative;
+  top: 20%;
+}
+
+.pictureOne, .pictureTwo, .pictureThree{
+  max-width: 100%;
+}
+
+.mantine-vcl0d1 .mantine-Carousel-controls{
+  background-color: transparent;
+}
