@@ -1,6 +1,6 @@
 import react, {useState} from 'react';
 import { initializeApp } from "firebase/app";
-import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import {getAuth, signInWithEmailAndPassword, browserLocalPersistence} from "firebase/auth";
 
 // Mantine Library
 import { TextInput } from '@mantine/core';
@@ -29,6 +29,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 
+
 //Login authentication function
 function Login() {
     const [enterEmail, setEmail] = useState('');
@@ -40,9 +41,11 @@ function Login() {
           const user = userCredential.user;
           const output = `Signed in as: ${enterEmail}`;
           alert(output)
+
+          auth.setPersistence(browserLocalPersistence);
         })
         .catch((error) => { //different error messages
-          if (error == 'FirebaseError: Firebase: Error (auth/user-not-found).'){
+          /*(if (error == 'FirebaseError: Firebase: Error (auth/user-not-found).'){
             alert('Account does not exist')
           }
           else if (error == 'FirebaseError: Firebase: Error (auth/invalid-email).'){
@@ -51,9 +54,9 @@ function Login() {
           else if (error == 'FirebaseError: Firebase: Error (auth/internal-error).'){
             alert('No Password entered')
           }
-          else {
-            alert(error)
-          }
+          else if (error == 'FirebaseError: Firebase: Error (auth/wrong-password).'){
+             //alert('Incorrect Password')
+          }*/
         });
     }
 
@@ -116,6 +119,7 @@ function Login() {
                                 rightSection: styles.inputRightSection,
                                 error: styles.inputError,
                             }}
+                            type="password"
                             label="Password" 
                             placeholder="Password" 
                             size="xl"

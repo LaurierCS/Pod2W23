@@ -1,6 +1,6 @@
 import react, {useState} from 'react';
 import { initializeApp } from "firebase/app";
-import {getAuth, createUserWithEmailAndPassword} from "firebase/auth";
+import {getAuth, createUserWithEmailAndPassword, browserLocalPersistence} from "firebase/auth";
 
 // Mantine Library
 import { Flex, TextInput } from '@mantine/core';
