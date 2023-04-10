@@ -1,8 +1,8 @@
 import styles from './Slides.module.css'
 import { Carousel } from '@mantine/carousel';
 
-import { astro} from '@/assets';
-// import astro from 'src/assets/images/astro.png'
+import {astro} from '@/assets';
+
 function Slides(){
   return (
     <>
@@ -17,15 +17,28 @@ function Slides(){
            { maxWidth: 'sm', slideSize: '100%', slideGap: 0 },
          ]}>
           <Carousel.Slide className={styles.slideOne}>
-          <div>
-            <img src={astro.src}/>
-          </div>
+            <div className={styles.divOne}>
+              <button className={styles.addButton}>
+                <span className={styles.plusOne}>+</span>
+              </button>
+            </div>
           </Carousel.Slide>
 
-          <Carousel.Slide className={styles.slideTwo}><img className={styles.pictureTwo} src={astro.src}/>
+          <Carousel.Slide className={styles.slideTwo}>
+            <div className={styles.divTwo}>
+              <button className={styles.addButton}> 
+              <span className={styles.plusTwo}>+</span>
+              </button>
+            </div>
           </Carousel.Slide>
 
-          <Carousel.Slide className={styles.slideThree}><img className={styles.pictureThree} src={astro.src}/>
+          <Carousel.Slide className={styles.slideThree}>
+            
+           <div className={styles.divThree}>
+            <button className={styles.addButton}>
+             <span className={styles.plusThree}>+</span>
+            </button>
+           </div>
           </Carousel.Slide>
 
       </Carousel>

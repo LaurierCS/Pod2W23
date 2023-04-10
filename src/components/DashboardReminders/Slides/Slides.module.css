@@ -1,6 +1,7 @@
 .slideOne, .slideTwo, .slideThree{
-  background-color: blue;
   border: 3px solid white;
+  background-color: #07080B;
+  border-radius: 25px;
 }
 
 #carouselTab{
@@ -8,13 +9,22 @@
   border-radius: 25px;
   margin:auto;
   position: relative;
-  top: 20%;
+  top: 25%;
+}
+.divOne, .divTwo, .divThree{
+  text-align: center;
+  position: relative;
+  margin-top: 10%;
 }
 
-.pictureOne, .pictureTwo, .pictureThree{
-  max-width: 100%;
+.plusOne, .plusTwo, .plusThree{
+  display: inline-block;
+  font-size: 1000%;
+  color: white;
 }
 
-.mantine-vcl0d1 .mantine-Carousel-controls{
+.addButton{
   background-color: transparent;
+  width: 100%;
+  /* border: 1px solid transparent; */
 }

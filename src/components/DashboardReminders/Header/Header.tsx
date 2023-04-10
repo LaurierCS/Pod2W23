@@ -3,7 +3,7 @@ function Header(){
   return(
     <div id={styles.Header}>
       <span className={styles.reminders}>Reminders</span>
-      <span className={styles.calView}>Calendar View ></span>
+      <button className={styles.calView}>Calendar View > </button>
     </div>
   );
 }
