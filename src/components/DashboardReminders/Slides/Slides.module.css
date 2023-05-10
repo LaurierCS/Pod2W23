@@ -11,6 +11,7 @@
   position: relative;
   top: 25%;
 }
+
 .divOne, .divTwo, .divThree{
   text-align: center;
   position: relative;
@@ -26,5 +27,5 @@
 .addButton{
   background-color: transparent;
   width: 100%;
-  /* border: 1px solid transparent; */
+  border: 1px solid transparent;
 }

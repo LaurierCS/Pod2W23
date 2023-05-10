@@ -6,6 +6,7 @@
   position: absolute;
   top: 4%;
   width: 100%;
+  padding: .3% 0% 0% 1%;
 }
 
 .reminders{
@@ -16,25 +17,13 @@
 }
 
 .calView{
-  color: white;
-  background-color: #1F1F1F;
-  border-radius: 10px;
-  padding: .7% 4% .7% 4%;
-  float: right;  
-  position: absolute;
-  top: 17%;
-  right: 2%;
-}
-
-.calView{
   font-family: 'Poppins', sans-serif;
   color: white;
   background-color: #1F1F1F;
   border-radius: 10px;
   padding: .8% 4% .7% 4%;
-  float: right;  
   position: absolute;
   top: 16%;
-  right: 2%;
+  right: 3%;
   border: 1px solid transparent;
 }

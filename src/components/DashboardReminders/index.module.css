@@ -4,6 +4,8 @@
   width: 45%;
   height: 40%;
   position: absolute;
-  left: 1%;
-  top: 3%;
+  /* left: 1%; */
+  /* top: 3%; */
+  bottom: 3%;
+  right: 3%;
 }
