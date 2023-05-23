@@ -1,6 +1,11 @@
+// Next Library
+import { useRouter } from 'next/router';
 // Mantine Library
 import { TextInput } from '@mantine/core';
 import { useForm, yupResolver } from '@mantine/form';
+// Firebase
+import { getAuth, signInWithEmailAndPassword} from 'firebase/auth';
+import app from '../scripts/firebase/config';
 // Yup Validation Library
 import * as Yup from 'yup';
 // Tabler Icons
@@ -8,7 +13,11 @@ import { IconId, IconMail, IconEye } from '@tabler/icons-react';
 // Styles | Images
 import styles from '../styles/auth.module.css';
 
+const auth = getAuth(app);
+
 function Login() {
+    const router = useRouter();
+
     // Validation
     let userSchema = Yup.object({
         email: Yup.string().required('Invalid email').email('Invalid email'),
@@ -23,6 +32,16 @@ function Login() {
     
         validate: yupResolver(userSchema),
     })
+
+    const userLogin = async () => {
+        const { email, password } = form.values;
+        try {
+            await signInWithEmailAndPassword(auth, email, password);
+            router.push('/login')
+        } catch (error) {
+            console.log('error');
+        }
+    }
 
     return  (
         <>
@@ -74,7 +93,7 @@ function Login() {
                             rightSection={<IconEye className={styles.inputIcons} />}
                             {...form.getInputProps('password')} />
                         <div className={styles.authButtonContainer}>
-                        <button className={styles.authButton} type="submit">Login</button>
+                        <button className={styles.authButton} onClick={userLogin}>Login</button>
                         </div>
                     </form>
                 </div>

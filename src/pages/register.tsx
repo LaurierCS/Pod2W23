@@ -1,6 +1,11 @@
+// Next Library
+import { useRouter } from 'next/router';
 // Mantine Library
 import { Flex, TextInput } from '@mantine/core';
 import { useForm, yupResolver } from '@mantine/form';
+// Firebase
+import { getAuth, createUserWithEmailAndPassword} from 'firebase/auth';
+import app from '../scripts/firebase/config';
 // Yup Validation Library
 import * as Yup from 'yup';
 // Tabler Icons
@@ -8,7 +13,11 @@ import { IconId, IconMail, IconEye } from '@tabler/icons-react';
 // Styles | Images
 import styles from '../styles/auth.module.css';
 
+const auth = getAuth(app);
+
 function Register() {
+    const router = useRouter();
+
     // Validation
     let userSchema = Yup.object({
         firstName: Yup.string().required('First name is a required field'),
@@ -27,6 +36,17 @@ function Register() {
     
         validate: yupResolver(userSchema),
     })
+
+    const userRegister = async () => {
+        const { firstName, lastName, email, password } = form.values;
+
+        try {
+            await createUserWithEmailAndPassword(auth, email, password);
+            router.push('/login')
+        } catch (error) {
+            console.log('error');
+        }
+    }
 
     return  (
         <>
@@ -113,7 +133,7 @@ function Register() {
                             rightSection={<IconEye className={styles.inputIcons} />}
                             {...form.getInputProps('password')} />
                         <div className={styles.authButtonContainer}>
-                        <button className={styles.authButton} type="submit">Create Account</button>
+                        <button className={styles.authButton} onClick={userRegister} type="submit">Create Account</button>
                         </div>
                     </form>
                 </div>
