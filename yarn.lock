@@ -2143,10 +2143,10 @@
     "y18n" "^5.0.5"
     "yargs-parser" "^20.2.2"
 
-"yup@^1.0.2":
-  "integrity" "sha512-Lpi8nITFKjWtCoK3yQP8MUk78LJmHWqbFd0OOMXTar+yjejlQ4OIIoZgnTW1bnEUKDw6dZBcy3/IdXnt2KDUow=="
-  "resolved" "https://registry.npmjs.org/yup/-/yup-1.0.2.tgz"
-  "version" "1.0.2"
+"yup@^1.1.1":
+  "integrity" "sha512-KfCGHdAErqFZWA5tZf7upSUnGKuTOnsI3hUsLr7fgVtx+DK04NPV01A68/FslI4t3s/ZWpvXJmgXhd7q6ICnag=="
+  "resolved" "https://registry.npmjs.org/yup/-/yup-1.1.1.tgz"
+  "version" "1.1.1"
   dependencies:
     "property-expr" "^2.0.5"
     "tiny-case" "^1.0.3"
